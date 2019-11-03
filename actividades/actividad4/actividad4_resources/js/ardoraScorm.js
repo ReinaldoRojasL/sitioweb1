@@ -26,8 +26,8 @@ if ( totalHours < 1000 && totalHours > 99 ) {totalHours = "0"+totalHours;} else 
 if ( totalMinutes < 10 ) {totalMinutes = "0"+totalMinutes;}var totalSeconds = Math.floor(calculatedTime/1000);if ( totalSeconds < 10 ) {totalSeconds = "0"+totalSeconds;}
 var sessionTime = totalHours+":"+totalMinutes+":"+totalSeconds;api.LMSSetValue("cmi.core.session_time", sessionTime);
 var report=""; if (tiAttempts){if (attempts>attemptsMax) {report="(*) ";}else{report="( ) ";}report=report+"INTENTOS: "+attempts+"/"+attemptsMax;}
-if (successes==successesMax){report=report+"  ( ) Preguntas: "+successes+"/"+successesMax;}
-else{report=report+"  (*) Preguntas: "+successes+"/"+successesMax;}api.LMSSetValue( "cmi.core.lesson_location", report);
+if (successes==successesMax){report=report+"  ( ) ACERTOS: "+successes+"/"+successesMax;}
+else{report=report+"  (*) ACERTOS: "+successes+"/"+successesMax;}api.LMSSetValue( "cmi.core.lesson_location", report);
 if (successes == successesMax) {api.LMSSetValue("cmi.core.lesson_status", "passed");if (scoOkDo==1){api.LMSSetValue("cmi.core.score.raw", scoPtos);}
 else{if (score > 0) {api.LMSSetValue("cmi.core.score.raw", score)} else {api.LMSSetValue("cmi.core.score.raw", 0)}}}else{if (scoWrongDo==1){
 api.LMSSetValue("cmi.core.score.raw", 0);}else{if (score > 0) {api.LMSSetValue("cmi.core.score.raw", score)} else {api.LMSSetValue("cmi.core.score.raw", 0)}}}api.LMSFinish("");}

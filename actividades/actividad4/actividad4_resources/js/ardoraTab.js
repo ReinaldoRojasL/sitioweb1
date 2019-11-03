@@ -38,7 +38,7 @@ contexto.lineWidth = 2;contexto.stroke();}contexto.beginPath();contexto.fillStyl
 contexto.fillText(timeAct,x,y+4);contexto.stroke();contexto.lineWidth = 1;profundidade=canvas.width+profundidade;if (timeAct==0){goTime();}}if (tiSuccesses){contexto.beginPath();
 contexto.fillStyle =colorButton;contexto.fillRect(1,profundidade,68,45);contexto.fillStyle =colorBack;contexto.fillRect(3,profundidade+2,64,18);
 contexto.strokeStyle =colorSele;contexto.strokeRect(3,profundidade+2,64,18);contexto.stroke();contexto.beginPath();contexto.fillStyle =colorText;
-contexto.font="8px Verdana";contexto.textAlign = "left";contexto.fillText("",8,profundidade+14);contexto.lineWidth = 5;contexto.stroke();
+contexto.font="8px Verdana";contexto.textAlign = "left";contexto.fillText("ACIERTOS:",8,profundidade+14);contexto.lineWidth = 5;contexto.stroke();
 contexto.beginPath();contexto.fillStyle =colorBack;contexto.font="bold 14px Verdana";contexto.textAlign = "center";
 contexto.fillText(successes+"/"+successesMax,x,profundidade+40);contexto.lineWidth = 1;contexto.stroke();profundidade=profundidade+8+40;}if (tiAttempts){contexto.beginPath();
 contexto.fillStyle =colorButton;contexto.fillRect(1,profundidade,68,45);contexto.fillStyle =colorBack;contexto.fillRect(3,profundidade+2,64,18);
@@ -88,7 +88,7 @@ interval = setInterval(function () { contexto.strokeStyle = borderColor;roundedR
 xAnim-=1;wAnim+=2;if (wAnim>canvas.width-80){clearInterval(interval);contexto.shadowColor = "black";contexto.shadowBlur = 20;contexto.shadowOffsetX = 10;contexto.shadowOffsetY = 10;
 contexto.stroke();contexto.beginPath();contexto.textAlign = "left";contexto.fillStyle = "black";for (i=0; i<outLines.length; i++){contexto.fillText(outLines[i], 50,(canvas.height/2)-(30*outLines.length/2)+((i+1)*30));
 } contexto.lineWidth = 5; contexto.stroke(); messagePlayAudio(typeMessage);
-goURL(urlMessage,timeOnMessage,goURLTarget,tiTimeType);}},1);}
+goURL(urlMessage,timeOnMessage,goURLTarget,typeMessage,tiTimeType);}},1);}
 if (typeMessage=="Error"){backAct(timeOnMessage,oldTypeGame);} if (typeMessage=="Time"){if (tiTimeType==1){timeAct=timeIni;backTime(timeOnMessage);backAct(timeOnMessage,oldTypeGame);}if (tiTimeType==2){backSol(timeOnMessage,oldTypeGame);}}
 }
 function goURL(url,seg,tar,tM,tT){
